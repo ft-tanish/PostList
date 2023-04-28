@@ -17,6 +17,7 @@ const PostList = () => {
 
   const handleAddPost = () => {
     if (newPost.trim() !== "") {
+      console.log("newPost", newPost);
       dispatch(addPost(newPost));
       setNewPost("");
     }

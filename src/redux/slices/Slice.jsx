@@ -39,6 +39,8 @@ const apiSlice = createSlice({
             state.addPostStatus = 'pending'
         },
         [addPost.fulfilled]: (state, { payload }) => {
+            console.log("state", state);
+            console.log("playload", payload);
             state.addPostStatus = 'success'
             state.getApiData.unshift(payload);
         },
