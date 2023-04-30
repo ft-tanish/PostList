@@ -12,8 +12,8 @@ const PostList = () => {
   const status = useSelector((status) => status?.api?.getApiStatus);
 
   useEffect(() => {
-    dispatch(getAPI());
-  }, [dispatch]);
+    if (!posts || posts?.length === 0) dispatch(getAPI());
+  }, [dispatch, posts]);
 
   const handleAddPost = () => {
     if (newPost.trim() !== "") {
